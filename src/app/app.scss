@@ -1,0 +1,226 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+// .btn-save {
+//     background-color: $theam-color;
+// }
+
+// .btn-save:hover {
+//     background-color: $theam-color-light !important;
+// }
+
+// .btn-save.activated {
+//     background-color: $theam-color-light !important;
+//     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 3px 5px rgba(0, 0, 0, 0.21);
+// }
+
+@font-face{
+font-family: Aclonica;
+src: url('../assets/fonts/aclonica.woff2') format('woff2');
+}
+
+@font-face{
+font-family: Montserrat Alternates;
+src: url('../assets/fonts/MonAlt.woff2') format('woff2');
+}
+ 
+*{
+font-family:'Montserrat Alternates', sans-serif;
+}
+
+.side-menu-button {
+    height: 60px;
+    font-size: 18px;
+}
+
+.alert-md .alert-title {
+    font-size: 20px;
+    margin: -4% auto;
+    padding: 0;
+}
+
+.alert-button-group {
+    flex-wrap: inherit !important;
+}
+
+.alert-md .alert-button .button-inner {
+   justify-content: center !important;
+}
+
+.alert-button {
+    color: #fff !important;
+    width: 50%;
+    text-transform: none !important;
+}
+
+.alert-button:first-child {
+    background-color: #F9A92F;
+}
+
+.alert-button:last-child {
+    background-color: #69C333;
+}
+
+.side-menu-icon {
+    float: left;
+    margin-right: 15px;
+}
+
+.scroll-content {
+    background-color: #FAFAFA;
+}
+
+ul.rating {
+    padding-left: 0px;
+    text-align: center;
+
+}
+
+rating ion-icon {
+        font-size: 3.2em;   
+        color: $theam-color !important;
+} 
+
+.btn-save {
+    background-color: $btn-color-1;
+}
+
+.btn-save:hover {
+    background-color: $btn-color-1-clicked !important;
+}
+
+.btn-save.activated {
+    background-color: $btn-color-1-clicked !important;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 3px 5px rgba(0, 0, 0, 0.21);
+}
+
+// .menu-inner ion-toolbar {
+//     height: 200px !important;
+// }
+ .text-center {
+      text-align: center;
+  }
+
+  .alert-title {
+   text-align: center;
+   padding-bottom:10px; 
+}
+
+.alert-sub-title {
+     text-align: center;
+}
+
+// .Alert {
+//     .alert-wrapper{
+//         color: #00529B;
+//         background-color: #BDE5F8;
+//     }
+// }
+.Success {
+    .alert-wrapper{
+        color: #4F8A10;
+        background-color: #DFF2BF;
+    }
+}
+.Alert {
+    .alert-wrapper{
+        color: #9F6000;
+        background-color: #FEEFB3;
+    }
+}
+.Error {
+    .alert-wrapper{
+        color: #D8000C;
+        background-color: #FFBABA;
+    }
+}
+
+// Validation Errors css
+
+.error-box {
+        color: #f00;
+        margin-left: 4%;
+}
+	
+.error-border {
+    color: red;
+}
+
+.font2em {
+    font-size: 2em !important;
+}
+
+.font18 {
+    font-size: 18px;
+}
+
+.height40px {
+    height:40px;
+}
+
+ion-footer ion-toolbar .toolbar-background-md {
+    background-color: #fafafa;
+    // color:white;
+} 
+
+.txt-center-red {
+    text-align: center !important;
+    color: red !important;
+}
+
+.pull-right {
+    float:right;
+}
+
+.pull-left {
+    float:left;
+}
+
+.mrg-lft-5 {
+    margin-left: 5%;
+}
+
+.mrg-rgt-5 {
+    margin-right: 5%;
+}
+
+.tost-css {
+    .toast-wrapper {
+        width: 92%;
+        border-radius: 38px;
+        text-align: center;
+        margin: 5px auto;
+    }
+}
+
+.toolbar-background-md {
+//    background: linear-gradient(to top, #f2dd4a, #f9a523);
+   background-color: #F9A92F;
+}
+.menu-footer .toolbar-background-md{
+    text-align: center;
+    background: #FAFAFA;
+}
+
+.menu-footer .toolbar-content-md {
+    text-align: center;
+    background: #FAFAFA;
+}
+
+.hidden {
+        display: none;
+}

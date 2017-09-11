@@ -1,0 +1,61 @@
+<ion-content padding>
+  <section class="login-container">
+    
+    <h1 class="pro-name">BHOJAN</h1>
+
+    <p *ngIf="!isFormValid" class="form-invalid-msg">Please fill out all details accurately.</p>
+
+    <form [formGroup]="memberSignUpForm" (ngSubmit)="signup(memberSignUpForm.value)">
+    <ion-list>
+      <ion-item>
+        <ion-input type="text" placeholder="First Name" value="" [formControl]="memberSignUpForm.controls['firstName']" ></ion-input>
+      </ion-item>
+        <div class="error-box" *ngIf="memberSignUpForm.controls['firstName'].hasError('required') && memberSignUpForm.controls['firstName'].touched">* First Name is required!</div>
+        <div class="error-box" *ngIf="memberSignUpForm.controls['firstName'].hasError('maxlength') && memberSignUpForm.controls['firstName'].touched">* Maximum First Name length is 20!</div>
+      
+      <ion-item>
+        <ion-input type="text" placeholder="Last Name" value="" [formControl]="memberSignUpForm.controls['lastName']" ></ion-input>
+      </ion-item>
+        <div class="error-box" *ngIf="memberSignUpForm.controls['lastName'].hasError('required') && memberSignUpForm.controls['lastName'].touched">* Last Name is required!</div>
+		    <div class="error-box" *ngIf="memberSignUpForm.controls['lastName'].hasError('maxlength') && memberSignUpForm.controls['lastName'].touched">* Maximum Last Name length is 20!</div>
+
+
+      <ion-item>
+        <ion-input type="email" placeholder="Email" value="" [formControl]="memberSignUpForm.controls['email']" [ngClass]="{'error-border':!memberSignUpForm.controls['email'].valid}"></ion-input>         
+      </ion-item>
+      
+        <div class="error-box" *ngIf="memberSignUpForm.controls['email'].hasError('required') && memberSignUpForm.controls['email'].touched">* Email is required!</div>
+	    	<div class="error-box" *ngIf="memberSignUpForm.controls['email'].hasError('pattern') && memberSignUpForm.controls['email'].touched">* Invalid Email!</div>
+
+      <ion-item>
+        <ion-input type="number" placeholder="Mobile Number" value="" [formControl]="memberSignUpForm.controls['mobileNo']" [ngClass]="{'error-border':!memberSignUpForm.controls['mobileNo'].valid}"></ion-input>         
+      </ion-item>
+      
+        <div class="error-box" *ngIf="memberSignUpForm.controls['mobileNo'].hasError('required') && memberSignUpForm.controls['mobileNo'].touched">* Mobile Number is required!</div>
+        <div class="error-box" *ngIf="memberSignUpForm.controls['mobileNo'].hasError('pattern') && memberSignUpForm.controls['mobileNo'].touched">* Invalid Mobile Number!</div>
+	    	
+        <!--<ion-item>
+          <ion-input type="password" placeholder="Password" value="" [formControl]="memberSignUpForm.controls['password']" ></ion-input>
+        </ion-item>
+        <div class="error-box" *ngIf="memberSignUpForm.controls['password'].hasError('required') && memberSignUpForm.controls['password'].touched">* Password is required!</div>
+        <div class="error-box" *ngIf="memberSignUpForm.controls['password'].hasError('minlength') && memberSignUpForm.controls['password'].touched">* Minimum Password length is 5!</div>
+
+        <ion-item>
+          <ion-input type="password" placeholder="Confirm Password" value="" [formControl]="memberSignUpForm.controls['confirmPassword']" ></ion-input>
+        </ion-item>
+        <div class="error-box" *ngIf="memberSignUpForm.controls['confirmPassword'].hasError('required') && memberSignUpForm.controls['confirmPassword'].touched">* Confirm Password is required!</div>
+        <div class="error-box" *ngIf="memberSignUpForm.controls['confirmPassword'].hasError('minlength') && memberSignUpForm.controls['confirmPassword'].touched">* Minimum Confirm Password length is 5!</div>-->
+
+         <h4 class="pass-info"> *Auto generated password will be send to above email.</h4>
+
+    </ion-list>
+
+    <button class="login-button btn-save" ion-button block>Signup</button>
+
+    </form>
+
+    <button ion-button color="light" class="sign-up" clear (click)="signin()"> Alrady have account ?    Sign in !</button>
+
+  </section>
+</ion-content>
+

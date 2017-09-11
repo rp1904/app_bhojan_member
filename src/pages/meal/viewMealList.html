@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Meals</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+  <ion-card *ngFor="let memberMeal of memberMeals; let i = index;">
+        <ion-card-content>
+          <div class="btn-grp">
+            <button ion-button round class="btn-meal view" (click)="mealDetails(memberMeal.meal)">View</button>
+          </div>
+          <h2>{{ memberMeal.meal.mealTitle }}</h2>
+          <ion-note>{{ memberMeal.createdUpdated.createdAt | date:'dd-MMM-yyyy hh:mm a' }}</ion-note>
+        </ion-card-content>
+  </ion-card>
+  </ion-list>
+
+  <ion-infinite-scroll *ngIf="!isComplete" (ionInfinite)="doInfinite($event)">
+   <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+   </ion-infinite-scroll-content>
+ </ion-infinite-scroll>
+  
+  <ion-card *ngIf="isMealListEmpty">
+   <ion-card-content>
+          <ion-item>
+          <h2 class="txt-center-red"> <ion-icon item-left name="search"></ion-icon>No record found !</h2>
+          </ion-item>
+    </ion-card-content>
+</ion-card>
+
+</ion-content>

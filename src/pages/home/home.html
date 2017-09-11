@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+<img src="{{urlImage}}">
+
+<div *ngIf="meal" >
+ 
+<ion-card>
+  <ion-card-header class="text-center"> {{ meal.mealTitle }} </ion-card-header>
+   <ion-card-content>
+   <ion-segment [(ngModel)]="mealType">
+    <ion-segment-button value="veg" color="secondery">
+      Veg
+    </ion-segment-button>
+    <ion-segment-button value="nonveg" color="danger">
+      Non-Veg
+    </ion-segment-button>
+  </ion-segment>
+  
+  <div [ngSwitch]="mealType">
+  <ion-list *ngSwitchCase="'veg'">
+    <ion-item>
+    <ul>
+      <li *ngFor="let mealMenu of vegMenu;">
+          {{ mealMenu }}
+      </li>
+    </ul>
+    <button class="btn-save" ion-button full (click)="generate('VEG')">Get Meal Code</button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'nonveg'">
+    <ion-item *ngIf="!meal.isNonVeg"><br>
+     <h2 class="txt-center-red">Not Available !</h2>
+    </ion-item>
+    <ion-item *ngIf="meal.isNonVeg">
+     <ul>
+      <li *ngFor="let mealMenu of nonVegMenu;">
+          {{ mealMenu }}
+      </li>
+    </ul>
+<!--
+      <rating [(ngModel)]="nonVegRating" 
+        readOnly="true"
+        max="5"
+        emptyStarIconName="star-outline"
+        halfStarIconName="star-half"
+        starIconName="star"
+        nullable="false"
+        (ngModelChange)="rateMeal($event)">
+     </rating>-->
+
+     <button class="btn-save" ion-button full (click)="generate('NON-VEG')">Get Meal Code</button>
+
+    </ion-item>
+  </ion-list>
+  </div>
+
+ </ion-card-content>
+</ion-card>
+
+</div>
+
+<div *ngIf="! meal">
+  <ion-card>
+    <ion-card-header class="txt-center-red">  No new meal added ! </ion-card-header>
+  </ion-card>
+</div>
+
+
+</ion-content>

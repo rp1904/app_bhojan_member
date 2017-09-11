@@ -1,0 +1,21 @@
+page-viewMealList {
+
+    
+    .btn-grp {
+    
+        float:right;
+        display: grid;
+    }
+
+    .btn-meal {
+            
+            font-size: 13px;
+            height: 30px;
+            text-transform: none;
+    }
+
+    .btn-meal.view {
+            
+            background-color: $theam-color;
+    }
+}

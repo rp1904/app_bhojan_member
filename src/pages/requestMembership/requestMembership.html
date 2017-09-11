@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons class="pull-left">
+      <button ion-button icon-only (click)="goToLogin()">
+         <ion-icon name="arrow-round-back"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>
+       Request For Membership
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <img src="{{urlImage}}">
+  
+   <br>
+   <div *ngIf="!(isRequestPending || isRequestRejected)">
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="messCode"  placeholder="Enter Mess Code">{{messCode | uppercase}}</ion-input>
+        </ion-item>
+        <br>
+        <button class="btn-save" ion-button full (click)="makeMemberShipRequest(messCode)">Make Request</button>
+   </div>
+   
+    <ion-card *ngIf="isRequestPending">
+        <ion-card-content class="text-center">
+            <h1>{{ membershipRequest.mess.messName }}</h1><br>
+            <h3>{{ membershipRequest.createdUpdated.createdAt | date:'dd-MMM-yyyy hh:mm a' }}</h3><br>
+            <h2>Your Request Is Pending... !</h2> 
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="isRequestRejected">
+       <ion-card-content class="text-center">
+            <h1>{{ membershipRequest.mess.messName }}</h1><br>
+            <h3>{{ membershipRequest.createdUpdated.createdAt | date:'dd-MMM-yyyy hh:mm a' }}</h3><br>
+            <h2>Your request is rejected.</h2>
+            <h2>Please place new request !</h2>
+        </ion-card-content>
+    </ion-card>
+
+    <br>
+
+     <button *ngIf="isRequestPending" class="btn-save" ion-button block (click)="checkRequestStatus()">Check Upadeted Request Status</button>
+     <button *ngIf="isRequestRejected" class="btn-save" ion-button block (click)="newReq()">Place New Request</button>
+
+</ion-content>
+

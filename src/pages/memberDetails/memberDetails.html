@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding *ngIf="isMemberDetailsLoaded">
+<br><br><br>
+  <ion-card>
+    <ion-list>
+
+   <ion-item>
+      <ion-icon name="person" item-start></ion-icon>
+      {{ memberMealCoupen.member.userProfile.fullName}}
+    </ion-item>
+
+      <ion-item>
+      <ion-icon name="mail" item-start></ion-icon>
+      {{ memberMealCoupen.member.email}}
+    </ion-item>
+
+      <ion-item>
+      <ion-icon name="call" item-start></ion-icon>
+      {{ memberMealCoupen.member.mobileNumber}}
+    </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+        Meal Coupen Info
+   </ion-card-header>
+
+    <ion-list>
+
+    <ion-item>
+        Status      
+      <h2 class="status">
+       {{ memberMealCoupen.status }}
+      </h2>
+    </ion-item>
+
+    <ion-item>
+        Amount      
+      <h2>
+       &#8377;  {{ memberMealCoupen.mealCoupen.amount }}
+      </h2>
+    </ion-item>
+
+    <ion-item>
+        Purchased Date      
+      <h2>
+          {{ memberMealCoupen.mealCoupen.createdUpdated.createdAt | date:'dd-MMM-yyyy' }}
+      </h2>
+    </ion-item>
+
+    <ion-item>
+        Expires On      
+      <h2>
+        {{ memberMealCoupen.expiryDate | date:'dd-MMM-yyyy' }}
+      </h2>
+    </ion-item>
+
+      <ion-item>
+        Total Meals
+        <h2 >
+            {{ memberMealCoupen.noOfMeals }}
+        </h2>
+    </ion-item>
+
+    <ion-item>
+        Redeemed Meals
+        <h2>
+            {{ memberMealCoupen.noOfMeals - memberMealCoupen.remainingMealCount}}
+        </h2>
+    </ion-item>
+
+    <ion-item>
+        Available Meals
+        <h2>
+            {{ memberMealCoupen.remainingMealCount }}
+        </h2>
+    </ion-item>
+
+     
+    </ion-list>
+    
+  </ion-card>
+
+  <button class="btn-save" ion-button block (click)="changePassword()">Change Password</button>
+
+</ion-content>

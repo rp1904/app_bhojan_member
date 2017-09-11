@@ -1,0 +1,33 @@
+<ion-content padding>
+  <section class="login-container">
+
+    <h1 class="pro-name">BHOJAN</h1>
+
+    <!--<form [formGroup]="authForm" (ngSubmit)="viewTest()">-->
+    <form [formGroup]="authForm" (ngSubmit)="login(authForm.value)">
+      <ion-list>
+        <ion-item>
+          <ion-input type="email" placeholder="Email/Mobile Number" value="" [formControl]="authForm.controls['emailOrMobileNo']" [ngClass]="{'error-border':!authForm.controls['emailOrMobileNo'].valid}"></ion-input>
+        </ion-item>
+        <div class="error-box" *ngIf="authForm.controls['emailOrMobileNo'].hasError('required') && authForm.controls['emailOrMobileNo'].touched">* Email/Mobile No is required !</div>
+
+        <ion-item>
+          <ion-input type="password" placeholder="Password" value="" [formControl]="authForm.controls['password']"></ion-input>
+        </ion-item>
+        <div class="error-box" *ngIf="authForm.controls['password'].hasError('required') && authForm.controls['password'].touched">* Password is required !</div>
+        <div class="error-box" *ngIf="authForm.controls['password'].hasError('minlength') && authForm.controls['password'].touched">* Minimum password length is 5 !</div>
+
+      </ion-list>
+
+     <!--<h6 color='light' (click)="forgotPassword()">Forgot Password?</h6>-->
+
+      <button class="login-button btn-save" ion-button block> Login </button>
+
+    </form>
+
+    <button ion-button color="light" class="sign-up" clear (click)="signup()"> Not a member ?    Sign up now !</button>
+  
+  </section>
+  
+</ion-content>
+

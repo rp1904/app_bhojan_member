@@ -1,0 +1,32 @@
+page-memberDetails {
+
+    ion-card ion-list ion-item {
+        text-align: center;
+        font-size: 15px;
+    } 
+
+    ion-card ion-list ion-item ion-icon {
+        margin-left: 15px;
+        margin-right: 15px;
+    } 
+
+    ion-card ion-list ion-item h2{
+       float: right;
+    } 
+
+    ion-card ion-card-header {
+        text-align: center;
+        font-weight: 500;
+    }
+
+    ion-card-header {
+        border-bottom: 2px solid #e6e6e6;
+    }
+
+    h2.status {
+        font-size: 13px;
+        margin-top: 2px !important;
+    }
+}
+
+
