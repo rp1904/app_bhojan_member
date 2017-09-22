@@ -28,18 +28,15 @@
 //     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.14), 0 3px 5px rgba(0, 0, 0, 0.21);
 // }
 
-@font-face{
-font-family: Aclonica;
-src: url('../assets/fonts/aclonica.woff2') format('woff2');
-}
 
 @font-face{
-font-family: Montserrat Alternates;
-src: url('../assets/fonts/MonAlt.woff2') format('woff2');
+font-family: Montserrat;
+src: url('../assets/fonts/Montserrat.woff2') format('woff2');
 }
+
  
 *{
-font-family:'Montserrat Alternates', sans-serif;
+font-family:'Montserrat', sans-serif;
 }
 
 .side-menu-button {
@@ -222,5 +219,34 @@ ion-footer ion-toolbar .toolbar-background-md {
 }
 
 .hidden {
-        display: none;
+    display: none;
+}
+
+.spinner-container {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+.success {
+    background-color: $success !important;
+}
+
+.danger {
+    background-color: $danger !important;
+}
+
+.status {
+    
+    margin: 0px !important;
+    display: inline !important;
+    padding: .3em .6em .3em !important;
+    font-size: 75% !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    color: #fff !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    vertical-align: baseline !important;
+    border-radius: .25em !important;
 }

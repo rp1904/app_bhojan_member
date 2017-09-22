@@ -193,14 +193,18 @@ export class MyApp {
               this.storage.get('rp_app_key').then((val) => {
                 this.storage.get('user_name').then((username) => {
 
-                  console.log(' app.component.ts Get rp_app_key ====>>> ', val);
+                console.log("Before splashScreen.hide() : " + new Date());
+                setTimeout(() => {
+                  console.log("In splashScreen.hide() : " + new Date());
+                  this.splashScreen.hide();
+                }, 100);
+              
                   if (val == null) {
                     this.rootPage = Signin;
                   }
                   if (val) {
 
                     this.userName = username;
-                    this.splashScreen.hide();
                     this.appUrls.authservice.http.appKey = val;
                     if(this.platform.is('cordova')) {
                       this.appUrls.initPushNotification(); 

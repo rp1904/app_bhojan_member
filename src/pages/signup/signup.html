@@ -1,7 +1,7 @@
 <ion-content padding>
   <section class="login-container">
     
-    <h1 class="pro-name">BHOJAN</h1>
+    <img src="assets/icon/logo_orange.png" class="logo" />
 
     <p *ngIf="!isFormValid" class="form-invalid-msg">Please fill out all details accurately.</p>
 
@@ -52,9 +52,11 @@
 
     <button class="login-button btn-save" ion-button block>Signup</button>
 
+    <h4 class="pass-info text-center">By signing up, you are agreeing to the<br><a href="#">Terms and Conditions.</a></h4>
+
     </form>
 
-    <button ion-button color="light" class="sign-up" clear (click)="signin()"> Alrady have account ?    Sign in !</button>
+    <button ion-button color="light" class="sign-up" clear (click)="signin()"> Alrady have account ?<strong class="mrg-lft-5 pull-right">Sign in !</strong></button>
 
   </section>
 </ion-content>

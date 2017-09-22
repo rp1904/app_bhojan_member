@@ -70,7 +70,7 @@ generate(meal_type) {
                 if(this.res.responseType == "Error") {
                   this.appUrls.loading.showAlertOnlyTSubitle("Error",this.res.message);
                 } else {
-                      this.barcodeScanner.encode(this.barcodeScanner.Encode.TEXT_TYPE, this.res.message + "==" + meal_type)
+                      this.barcodeScanner.encode(this.barcodeScanner.Encode.TEXT_TYPE, this.res.message + "==" + meal_type + "==QR")
                       .then ((success) => {
                         console.log();
                         this.urlImage = success.file;

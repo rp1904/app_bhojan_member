@@ -1,7 +1,7 @@
 <ion-content padding>
   <section class="login-container">
 
-    <h1 class="pro-name">BHOJAN</h1>
+    <img src="assets/icon/logo_orange.png" class="logo" />
 
     <!--<form [formGroup]="authForm" (ngSubmit)="viewTest()">-->
     <form [formGroup]="authForm" (ngSubmit)="login(authForm.value)">
@@ -25,7 +25,7 @@
 
     </form>
 
-    <button ion-button color="light" class="sign-up" clear (click)="signup()"> Not a member ?    Sign up now !</button>
+    <button ion-button color="light" class="pull-left sign-up" clear full (click)="signup()">Not a member ? <strong class="mrg-lft-5">Sign up !</strong></button>
   
   </section>
   
