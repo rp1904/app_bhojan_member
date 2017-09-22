@@ -1,7 +1,7 @@
 <ion-content padding>
   <section class="login-container">
     
-    <img src="assets/icon/logo_orange.png" class="logo" />
+    <img src="assets/icon/logo_orange.png" class="logo"/>
 
     <p *ngIf="!isFormValid" class="form-invalid-msg">Please fill out all details accurately.</p>
 
@@ -33,20 +33,8 @@
       
         <div class="error-box" *ngIf="memberSignUpForm.controls['mobileNo'].hasError('required') && memberSignUpForm.controls['mobileNo'].touched">* Mobile Number is required!</div>
         <div class="error-box" *ngIf="memberSignUpForm.controls['mobileNo'].hasError('pattern') && memberSignUpForm.controls['mobileNo'].touched">* Invalid Mobile Number!</div>
-	    	
-        <!--<ion-item>
-          <ion-input type="password" placeholder="Password" value="" [formControl]="memberSignUpForm.controls['password']" ></ion-input>
-        </ion-item>
-        <div class="error-box" *ngIf="memberSignUpForm.controls['password'].hasError('required') && memberSignUpForm.controls['password'].touched">* Password is required!</div>
-        <div class="error-box" *ngIf="memberSignUpForm.controls['password'].hasError('minlength') && memberSignUpForm.controls['password'].touched">* Minimum Password length is 5!</div>
-
-        <ion-item>
-          <ion-input type="password" placeholder="Confirm Password" value="" [formControl]="memberSignUpForm.controls['confirmPassword']" ></ion-input>
-        </ion-item>
-        <div class="error-box" *ngIf="memberSignUpForm.controls['confirmPassword'].hasError('required') && memberSignUpForm.controls['confirmPassword'].touched">* Confirm Password is required!</div>
-        <div class="error-box" *ngIf="memberSignUpForm.controls['confirmPassword'].hasError('minlength') && memberSignUpForm.controls['confirmPassword'].touched">* Minimum Confirm Password length is 5!</div>-->
-
-         <h4 class="pass-info"> *Auto generated password will be send to above email.</h4>
+	    
+        <h4 class="pass-info"> *Auto generated password will be send to above email.</h4>
 
     </ion-list>
 
